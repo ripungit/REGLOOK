@@ -1,0 +1,7 @@
+--- VPS START ---
+ID: 5bc883fa-1ed4-4df5-9202-ecd4898a8f17, Name: Hetzner VPS 2, Host: 178.156.223.139, User: root
+ID: 5f1ccb3d-6468-417d-9239-04006968487c, Name: New Name, Host: 5.78.144.175, User: root
+ID: 50d73dea-4ce5-42de-bccd-05c55709cf0e, Name: Test VPS, Host: 127.0.0.1, User: root
+ID: 9837db8b-1d11-4bb3-872e-d046c5a47711, Name: Test VPS, Host: 127.0.0.1, User: root
+ID: ec0948a3-bbec-4831-a040-1ddf021e65ea, Name: Test VPS, Host: 127.0.0.1, User: root
+--- VPS END ---

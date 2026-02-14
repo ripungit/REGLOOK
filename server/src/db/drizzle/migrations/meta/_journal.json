@@ -1,0 +1,83 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1769496645835,
+      "tag": "0000_keen_jasper_sitwell",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1769519843823,
+      "tag": "0001_dear_microbe",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1769530683117,
+      "tag": "0002_flimsy_screwball",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1770136346518,
+      "tag": "0003_known_punisher",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1770173758823,
+      "tag": "0004_absent_charles_xavier",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1770192410689,
+      "tag": "0005_chemical_captain_midlands",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1770192516778,
+      "tag": "0006_mixed_mercury",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1770464748980,
+      "tag": "0007_big_boom_boom",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1770522018938,
+      "tag": "0008_lumpy_diamondback",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1770533412096,
+      "tag": "0009_new_molecule_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1770557763882,
+      "tag": "0010_naive_black_panther",
+      "breakpoints": true
+    }
+  ]
+}

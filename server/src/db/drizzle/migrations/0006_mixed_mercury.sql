@@ -1,0 +1,1 @@
+ALTER TABLE "cocktail_device_secrets" ADD COLUMN "encrypted_secret" text;

@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* =====================
+   THEME
+===================== */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-space-mono), monospace;
+  --font-orbitron: var(--font-orbitron), sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* =====================
+   ROOT VARIABLES
+===================== */
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+}
+
+/* =====================
+   DARK MODE
+===================== */
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+}
+
+/* =====================
+   BASE
+===================== */
+
+@layer base {
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* =====================
+   LOGO SHIMMER (FIXED)
+===================== */
+
+/* Background-position animation (NO movement) */
+@keyframes logo-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@layer utilities {
+  .logo-shimmer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+
+    background: linear-gradient(120deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.8) 50%,
+        transparent 70%);
+    background-size: 200% 100%;
+    background-position: -200% 0;
+
+    animation: logo-shimmer 2.8s ease-in-out infinite;
+
+    /* MASK TO LOGO SHAPE */
+    mask-image: url("/logo/reglook-logo.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 100%;
+
+    -webkit-mask-image: url("/logo/reglook-logo.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: 100%;
+  }
+}
+
+/* =====================
+   OPTIONAL ANIMATIONS
+===================== */
+
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

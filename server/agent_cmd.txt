@@ -1,0 +1,1 @@
+cd d:\REGLOOK\cocktail && npm run dev -- --serverUrl http://localhost:9100 --deviceId 44598586-9c59-41c7-846e-1fd761b7ea17 --enrollmentToken b422443f21949e7ea89b94d82ebf6b24c33ef9fcd9b7bb7ebb97c4b32bf8b354

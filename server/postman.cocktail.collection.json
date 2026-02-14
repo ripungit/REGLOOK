@@ -1,0 +1,194 @@
+{
+    "info": {
+        "name": "Cocktail API",
+        "description": "Endpoints for Cocktail Agent System",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "User",
+            "item": [
+                {
+                    "name": "Start Enrollment",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"vpsId\": \"{{vpsId}}\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/cockpit/cocktail/devices/enroll/start",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "cockpit",
+                                "cocktail",
+                                "devices",
+                                "enroll",
+                                "start"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "List Devices",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/cockpit/cocktail/devices",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "cockpit",
+                                "cocktail",
+                                "devices"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Device",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/cockpit/cocktail/devices/{{deviceId}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "cockpit",
+                                "cocktail",
+                                "devices",
+                                "{{deviceId}}"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Task",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"type\": \"shell.exec\",\n    \"payload\": {\n        \"command\": \"df -h\"\n    }\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/cockpit/cocktail/devices/{{deviceId}}/tasks",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "cockpit",
+                                "cocktail",
+                                "devices",
+                                "{{deviceId}}",
+                                "tasks"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Device (Agent)",
+            "item": [
+                {
+                    "name": "Finish Enrollment",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"deviceId\": \"{{deviceId}}\",\n    \"enrollmentToken\": \"{{token}}\",\n    \"agentVersion\": \"1.0.0\",\n    \"os\": \"linux\",\n    \"arch\": \"x64\",\n    \"hostname\": \"vps-1\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/cockpit/cocktail/device/enroll/finish",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "cockpit",
+                                "cocktail",
+                                "device",
+                                "enroll",
+                                "finish"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Heartbeat",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "x-device-id",
+                                "value": "{{deviceId}}"
+                            },
+                            {
+                                "key": "x-signature",
+                                "value": "{{signature}}"
+                            },
+                            {
+                                "key": "x-ts",
+                                "value": "{{ts}}"
+                            },
+                            {
+                                "key": "x-nonce",
+                                "value": "{{nonce}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"status\": \"ok\",\n    \"agentVersion\": \"1.0.0\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/cockpit/cocktail/device/heartbeat",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "cockpit",
+                                "cocktail",
+                                "device",
+                                "heartbeat"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ]
+}
